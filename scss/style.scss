@@ -1,0 +1,222 @@
+$cardWidth: 30vw;
+$margins: (100vw - $cardWidth) / 2;
+$switch-speed: 200ms;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Manrope;
+}
+
+body{
+    background-image: url("/background.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    margin-top: 5vh;
+}
+
+#servers{
+    margin-top: 5vh;
+    margin-left: $margins;
+    margin-right: $margins;
+    width: $cardWidth;
+    height: min-content;
+}
+
+#server{
+    $padding: 20px;
+    position: relative;
+    display: grid;
+    margin: 20px 0;
+    color: black;
+    // border: 1px #F7DBA7 solid;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background-color: #FFF;
+    padding: $padding;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 50% 50%;
+    border-radius: 15px;
+    
+    h3{
+        font-size: 2em;
+        font-weight: 700;
+    }
+
+    p{
+        grid-column-start: 2;
+        font-size: 1.2em;
+        color: #828282;
+        vertical-align: bottom
+    }
+
+    span{
+        position: absolute;
+        right: $padding;
+        top: $padding / 2;
+        padding: 0 7px;
+        background-color: #00B4F6;
+        border-radius: 5px;
+        color: white;
+    }
+
+    img{
+        // max-width: 100%;
+        height: 100%;
+        width: 75%;
+        grid-row: 1 / 3;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+
+    transition: all 200ms ease-out;
+    animation-duration: 500ms;
+    animation-name: slideIn forwards;
+}    
+
+#loading{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes slideIn {
+    from{
+        transform: translate(-200px);
+    }
+
+    to{
+        transform: translate(-200px);
+    }
+}
+
+#server:hover{
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    transform: translateX(10px);
+}
+
+// button{
+//     border: black;
+//     position: absolute;
+//     top: 0;
+//     width: 100%;
+//     height: 10vh;
+//     font-size: xx-large;
+// }
+
+#parameters{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 50% 50%;
+    position: relative;
+    margin-top: 5vh;
+    margin-left: $margins;
+    margin-right: $margins;
+    width: $cardWidth - 2 * 0.7vw;
+    height: min-content;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 0.7vw;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    #online{
+        // height: 100%;
+        // text-align: center;
+        // width: 100%;
+        color: rgb(0, 0, 0);
+        font-size: 1.2em;
+        font-weight: 700;
+        grid-column: 1/3;
+    }
+    label{
+        position: absolute;
+        top: 0.45vw;
+        right: 0.7vw;
+    }
+    button{
+        grid-row: 2/3;
+        border: none;
+        background-color: #00B4F6;
+        color: white;
+        font-size: 1.2em;
+        border-radius: 12px;
+        transition-duration: 200ms;
+
+    }
+    button:hover{
+        background-color: #2196F3;
+        box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+    }
+    button:active{
+        box-shadow: none
+    }
+}
+
+
+
+
+// switch
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+/* The slider */
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: $switch-speed;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: $switch-speed;
+}
+
+input:checked + .slider {
+background-color: #2196F3;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

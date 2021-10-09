@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft server
+    </title>
+    <script src="/main.js"></script>
+    <link rel="stylesheet" href="Styles/style.min.css">
+
+</head>
+
+<body>
+    <h1>AVAILABLE SERVERS:</h1>
+    <div id="parameters">
+        <span id="online">ONLINE PLAYERS:</span>
+        <label class="switch">
+            <input type="checkbox" id="players" onclick="filter()">
+            <span class="slider round"></span>
+        </label>
+        <!-- <button id="filter-button" onclick="filter();">OK</button> -->
+    </div>
+    <div id="servers">
+    </div>
+    <img id="loading" src="loading.svg" alt="">
+</body>
+
+</html>
